@@ -1,0 +1,9 @@
+#ifndef _RETURN_CODES_H
+#define _RETURN_CODES_H
+
+#define MALLOC_FAILURE -1
+#define NULL_POINTER_FAILURE -2
+
+#define GENERAL_SUCCESS 1
+
+#endif
