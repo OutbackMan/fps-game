@@ -1,4 +1,5 @@
 #include "vector3d.h"
+#include "return-codes.h"
 
 #include <stdlib.h>
 
@@ -17,21 +18,19 @@ int vector3d_create(const float x, const float y, const float z, struct Vector3D
 	}
 }
 
-int vector3d_destroy(struct Vector3D *input_vector)
+void vector3d_destroy(struct Vector3D *input_vector)
 {
 	free(input_vector);
-	
-	input_vector = NULL;
 
-	return GENERAL_SUCCESS;
+	input_vector = NULL;
 }
 
-int vector3d_dot_product(struct Vector3D *input_vector1, struct Vector3D *input_vector2, float *ouput_value)
+int vector3d_dot_product(struct Vector3D *input_vector1, struct Vector3D *input_vector2, float *output_value)
 {
 	if (input_vector1 == NULL || input_vector2 == NULL) {
 		return NULL_POINTER_FAILURE;	
 	} else {
-		output_value = (input_vector1->x * input_vector2->x) +
+		*output_value = (input_vector1->x * input_vector2->x) +
 		               (input_vector1->y * input_vector2->y) +
 			       (input_vector1->z * input_vector2->z);
 		

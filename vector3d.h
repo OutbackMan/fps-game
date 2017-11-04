@@ -1,8 +1,6 @@
 #ifndef _VECTOR3D_H
 #define _VECTOR3D_H
 
-#include "return-codes.h"
-
 #include <stdbool.h>
 
 struct Vector3D {
@@ -13,7 +11,7 @@ struct Vector3D {
 
 // Constructor, destructor
 int vector3d_create(float x, float y, float z, struct Vector3D *output_vector);
-int vector3d_destroy(struct Vector3D *input_vector);
+void vector3d_destroy(struct Vector3D *input_vector);
 
 // Get direction, not magnitude
 int vector3d_normalise(struct Vector3D *input_output_vector);
