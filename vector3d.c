@@ -1,5 +1,5 @@
 #include "vector3d.h"
-#include "return-codes.h"
+#include "error-codes.h"
 
 #include <stdlib.h>
 
@@ -14,7 +14,7 @@ int vector3d_create(const float x, const float y, const float z, struct Vector3D
 		output_vector->y = y;
 		output_vector->z = z;
 
-		return GENERAL_SUCCESS;
+		return SUCCESS;
 	}
 }
 
@@ -34,6 +34,6 @@ int vector3d_dot_product(struct Vector3D *input_vector1, struct Vector3D *input_
 		               (input_vector1->y * input_vector2->y) +
 			       (input_vector1->z * input_vector2->z);
 		
-		return GENERAL_SUCCESS;
+		return SUCCESS;
 	}
 }
